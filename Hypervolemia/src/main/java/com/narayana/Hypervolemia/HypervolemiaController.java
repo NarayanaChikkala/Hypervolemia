@@ -17,10 +17,10 @@ public class HypervolemiaController {
 	@Autowired
 	HypervolemiaRepository hypervolemiaRepository;
 	
-	@RequestMapping("/Hypervolemia/{hypervolemicSymptoms}")
-	public String Hypervolemia(@PathVariable("hypervolemicSymptoms") String hypervolemicSymptoms) {
-		logger.info("accounts-changed byId() invoked: " + hypervolemicSymptoms);
-		String retVal = hypervolemiaRepository.gethypervolemia(hypervolemicSymptoms);
+	@RequestMapping("/hypervolemia/{hypervolemia}")
+	public String hypervolemia(@PathVariable("hypervolemia") String hypervolemia) {
+		logger.info("accounts-changed byId() invoked: " + hypervolemia);
+		String retVal = hypervolemiaRepository.gethypervolemia(hypervolemia);
 		logger.info("accounts-microservice byId() found: " + retVal);
 		return retVal;
 	}
